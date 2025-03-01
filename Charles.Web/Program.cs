@@ -1,6 +1,10 @@
-var builder = WebApplication.CreateBuilder(args);
-var configuration = builder.Configuration;
+using Charles.Infrastructure.Extensions;
 
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddApplicationServices();
+builder.Services.AddInfrastructureServices();
+builder.Services.AddAIServices();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
