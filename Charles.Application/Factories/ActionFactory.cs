@@ -1,3 +1,3 @@
 namespace Charles.Application.Factories;
 
-public class ActionFactory;
+internal class ActionFactory;

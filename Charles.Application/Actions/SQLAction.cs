@@ -1,3 +1,3 @@
 namespace Charles.Application.Actions;
 
-internal class SQLAction : IAction;
+internal sealed class SQLAction : IAction;
