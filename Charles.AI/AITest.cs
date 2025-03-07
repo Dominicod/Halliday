@@ -1,6 +1,6 @@
 namespace Charles.AI;
 
-public class AITest
+public class AITest : IAITest
 {
     public void Run()
     {

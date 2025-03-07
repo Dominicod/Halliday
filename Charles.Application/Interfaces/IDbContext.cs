@@ -1,3 +1,3 @@
 namespace Charles.Application.Interfaces;
 
-public interface IActionHandler;
+public interface IDbContext;
