@@ -1,6 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Charles.Infrastructure.Extensions;
+namespace Charles.Infrastructure.Injections;
 
 public static class InfrastructureServiceInjections
 {

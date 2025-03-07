@@ -1,4 +1,4 @@
-using Charles.Infrastructure.Extensions;
+using Charles.Infrastructure.Injections;
 
 var builder = WebApplication.CreateBuilder(args);
 

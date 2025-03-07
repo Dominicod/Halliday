@@ -1,3 +1,6 @@
 namespace Charles.Application.Interfaces;
 
-public interface IAI;
+public interface IAI
+{
+    void Run();
+}
