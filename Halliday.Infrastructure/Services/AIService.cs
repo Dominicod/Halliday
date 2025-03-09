@@ -1,6 +1,6 @@
 using Halliday.AI;
-using Halliday.Application.Interfaces;
+using IAIAssistant = Halliday.Application.Interfaces.IAIAssistant;
 
 namespace Halliday.Infrastructure.Services;
 
-internal class AIService : AITest, IAI;
+internal class AIService : AIAssistant, IAIAssistant;

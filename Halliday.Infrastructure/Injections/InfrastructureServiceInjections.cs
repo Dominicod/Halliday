@@ -8,7 +8,7 @@ public static class InfrastructureServiceInjections
 {
     public static IServiceCollection AddInfrastructureServices(this IServiceCollection services)
     {
-        services.AddScoped<IAI, AIService>();
+        services.AddSingleton<IAIAssistant, AIService>();
         
         return services;
     }

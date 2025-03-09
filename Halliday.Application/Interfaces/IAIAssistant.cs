@@ -1,6 +1,6 @@
 namespace Halliday.Application.Interfaces;
 
-public interface IAI
+public interface IAIAssistant
 {
-    void Run();
+    Task Run();
 }

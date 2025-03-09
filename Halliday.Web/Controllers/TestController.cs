@@ -1,12 +1,11 @@
+using Halliday.Application;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Halliday.Web.Controllers;
 
-public class TestController : Controller
+public class TestController(TestService test) : Controller
 {
     [HttpPost]
-    public string Hit([FromBody] string body)
-    {
-        return body;
-    }
+    [Route("[controller]/run")]
+    public void Run() => test.Run();
 }
