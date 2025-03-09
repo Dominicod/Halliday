@@ -1,3 +1,3 @@
-namespace Charles.Web.Controllers;
+namespace Halliday.Web.Controllers;
 
 public class AuthenticationController : Controller;

@@ -1,14 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Charles.Web", "Charles.Web\Charles.Web.csproj", "{DF769FC7-A265-41B9-B031-207E6F7C58F8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Halliday.Web", "Halliday.Web\Halliday.Web.csproj", "{DF769FC7-A265-41B9-B031-207E6F7C58F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Charles.AI", "Charles.AI\Charles.AI.csproj", "{FD12B765-8626-406D-8845-443BD082265C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Halliday.Domain", "Halliday.Domain\Halliday.Domain.csproj", "{97574E91-27DF-49F8-A1A4-5BEF9084B766}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Charles.Domain", "Charles.Domain\Charles.Domain.csproj", "{97574E91-27DF-49F8-A1A4-5BEF9084B766}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Halliday.Infrastructure", "Halliday.Infrastructure\Halliday.Infrastructure.csproj", "{CD9EB494-A473-41B2-A7B8-8B9560D03BAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Charles.Infrastructure", "Charles.Infrastructure\Charles.Infrastructure.csproj", "{CD9EB494-A473-41B2-A7B8-8B9560D03BAC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Charles.Application", "Charles.Application\Charles.Application.csproj", "{63CC7CFC-A5C6-4B73-90B7-7ECF2AEB9AE2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Halliday.Application", "Halliday.Application\Halliday.Application.csproj", "{63CC7CFC-A5C6-4B73-90B7-7ECF2AEB9AE2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,10 +18,6 @@ Global
 		{DF769FC7-A265-41B9-B031-207E6F7C58F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF769FC7-A265-41B9-B031-207E6F7C58F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF769FC7-A265-41B9-B031-207E6F7C58F8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FD12B765-8626-406D-8845-443BD082265C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FD12B765-8626-406D-8845-443BD082265C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FD12B765-8626-406D-8845-443BD082265C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FD12B765-8626-406D-8845-443BD082265C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{97574E91-27DF-49F8-A1A4-5BEF9084B766}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{97574E91-27DF-49F8-A1A4-5BEF9084B766}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97574E91-27DF-49F8-A1A4-5BEF9084B766}.Release|Any CPU.ActiveCfg = Release|Any CPU

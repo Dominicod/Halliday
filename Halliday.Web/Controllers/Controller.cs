@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace Charles.Web.Controllers;
+namespace Halliday.Web.Controllers;
 
 [ApiController]
 public abstract class Controller : ControllerBase;
