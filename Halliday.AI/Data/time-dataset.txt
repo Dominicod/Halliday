@@ -1,0 +1,25 @@
+What time is it?:TimeAction
+What time is it now?:TimeAction
+What is the time?:TimeAction
+What is the current time?:TimeAction
+Tell me the time:TimeAction
+Do you know what time it is?:TimeAction
+Time please:TimeAction
+Clock time?:TimeAction
+What hour is it?:TimeAction
+What's the time right now?:TimeAction
+Hello:GreetingAction
+Hi there:GreetingAction
+Good morning:GreetingAction
+Hey:GreetingAction
+Greetings:GreetingAction
+Hello World!:ModelAction
+Show me the model:ModelAction
+Can I see the model?:ModelAction
+Display model information:ModelAction
+Model details please:ModelAction
+What can you do?:HelpAction
+Help me:HelpAction
+I need assistance:HelpAction
+What are my options?:HelpAction
+How does this work?:HelpAction
