@@ -6,7 +6,7 @@
     "ReadMultiLines": false,
     "AllowQuoting": false,
     "Type": "TabularFile",
-    "FilePath": "/Users/dominicodonnell/Dev/PERSONAL/Halliday/Halliday.AI/Data/time-dataset.txt",
+    "FilePath": "C:\Users\domin\RiderProjects\Halliday\Halliday.AI\Data\time-dataset.txt",
     "Delimiter": ":",
     "DecimalMarker": ".",
     "HasHeader": false,
@@ -240,7 +240,7 @@
     },
     "Schema": "e0 * e1 * e2 * (e3 + e4 + e5 + e6 + e7 + e8 + e9) * e10",
     "MetricName": "MacroAccuracy",
-    "ModelFilePath": "/Users/dominicodonnell/Dev/PERSONAL/Halliday/Halliday.AI/Models/ActionClassificationModel/ActionClassificationModel.mlnet"
+    "ModelFilePath": "C:\Users\domin\RiderProjects\Halliday\Halliday.AI\Models\ActionClassificationModel\ActionClassificationModel.mlnet
   },
   "Type": "TrainingConfig",
   "Version": 5,

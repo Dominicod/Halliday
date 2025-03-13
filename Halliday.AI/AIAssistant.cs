@@ -7,12 +7,11 @@ public class AIAssistant : IAIAssistant
     public Task Run()
     {
         var model = new ActionClassificationModel();
-        var input = new ActionClassificationModel.ModelInput
+        var input = new ActionClassificationInput
         {
             Col0 = "What time is it?"
         };
-        var output = model.Classify(input);
-        var test = "";
+        var output = model.Predict(input);
         return Task.CompletedTask;
     }
 }
