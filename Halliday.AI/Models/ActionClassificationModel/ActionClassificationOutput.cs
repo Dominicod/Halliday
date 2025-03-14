@@ -1,8 +1,9 @@
+using Halliday.AI.Interfaces;
 using Microsoft.ML.Data;
 
 namespace Halliday.AI.Models.ActionClassificationModel;
 
-public record ActionClassificationOutput
+public record ActionClassificationOutput : IModelOutput
 {
     [ColumnName("col0")]
     public float[] Col0 { get; set; } = [];

@@ -13,8 +13,8 @@ public class ActionClassificationModel
         var mlModel = mlContext.Model.Load(MlNetModelPath, out _);
         return mlContext.Model.CreatePredictionEngine<ActionClassificationInput, ActionClassificationOutput>(mlModel);
     }
-    
-    public ActionClassificationOutput Predict(ActionClassificationInput input)
+
+    protected ActionClassificationOutput Predict(ActionClassificationInput input)
     {
         var predEngine = _predictEngine.Value;
         return predEngine.Predict(input);

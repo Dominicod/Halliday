@@ -6,10 +6,8 @@ namespace Halliday.Infrastructure.Injections;
 
 public static class InfrastructureServiceInjections
 {
-    public static IServiceCollection AddInfrastructureServices(this IServiceCollection services)
+    public static void AddInfrastructureServices(this IServiceCollection services)
     {
-        services.AddSingleton<IAIAssistant, AIService>();
-        
-        return services;
+        services.AddSingleton<IActionClassificationService, ActionClassificationService>();
     }
 }

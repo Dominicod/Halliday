@@ -1,8 +1,9 @@
+using Halliday.AI.Interfaces;
 using Microsoft.ML.Data;
 
 namespace Halliday.AI.Models.ActionClassificationModel;
 
-public record ActionClassificationInput
+public record ActionClassificationInput : IModelInput
 {
     [LoadColumn(0)]
     [ColumnName("col0")]
