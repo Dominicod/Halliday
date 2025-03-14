@@ -1,4 +1,4 @@
-using Halliday.AI.Interfaces;
+using Halliday.AI.Common.Interfaces;
 using Microsoft.ML.Data;
 
 namespace Halliday.AI.Models.ActionClassificationModel;

@@ -1,6 +1,8 @@
-namespace Halliday.Application.Models;
+using Halliday.Domain.Common.Interfaces;
 
-public record ModelInput(string Value)
+namespace Halliday.Domain.ValueObjects;
+
+public record ModelInput(string Value) : IValueObject
 {
     public static implicit operator ModelInput(string value) => new(value);
     

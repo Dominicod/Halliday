@@ -1,4 +1,4 @@
-namespace Halliday.AI.Interfaces;
+namespace Halliday.AI.Common.Interfaces;
 
 public interface IModelOutput
 {

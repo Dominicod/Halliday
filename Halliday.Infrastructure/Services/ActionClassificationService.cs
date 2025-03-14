@@ -1,10 +1,10 @@
 using Halliday.AI.Models.ActionClassificationModel;
 using Halliday.Application.Interfaces;
-using Halliday.Application.Models;
+using Halliday.Domain.ValueObjects;
 
 namespace Halliday.Infrastructure.Services;
 
-public class ActionClassificationService : ActionClassificationModel, IActionClassificationService
+internal class ActionClassificationService : ActionClassificationModel, IActionClassificationService
 {
     public ModelOutput ClassifyAction(ModelInput input)
     {

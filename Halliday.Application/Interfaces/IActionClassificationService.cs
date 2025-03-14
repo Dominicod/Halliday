@@ -1,4 +1,4 @@
-using Halliday.Application.Models;
+using Halliday.Domain.ValueObjects;
 
 namespace Halliday.Application.Interfaces;
 

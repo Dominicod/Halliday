@@ -1,4 +1,4 @@
-using Halliday.AI.Interfaces;
+using Halliday.AI.Common.Interfaces;
 
 namespace Halliday.AI;
 
