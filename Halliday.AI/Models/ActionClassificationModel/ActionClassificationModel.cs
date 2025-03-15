@@ -1,8 +1,9 @@
+using Halliday.AI.Common.Interfaces;
 using Microsoft.ML;
 
 namespace Halliday.AI.Models.ActionClassificationModel;
 
-public class ActionClassificationModel
+public class ActionClassificationModel : IModel
 {
     private readonly Lazy<PredictionEngine<ActionClassificationInput, ActionClassificationOutput>> _predictEngine = new(CreatePredictEngine, true);
     private static readonly string MlNetModelPath = Path.GetFullPath("ActionClassificationModel.mlnet");
@@ -14,9 +15,14 @@ public class ActionClassificationModel
         return mlContext.Model.CreatePredictionEngine<ActionClassificationInput, ActionClassificationOutput>(mlModel);
     }
 
-    protected ActionClassificationOutput Predict(ActionClassificationInput input)
+    public IModelOutput Predict(IModelInput input)
     {
+        var actionClassificationInput = input as ActionClassificationInput;
+        
+        if (actionClassificationInput is null)
+            throw new ArgumentException("Invalid input type");
+        
         var predEngine = _predictEngine.Value;
-        return predEngine.Predict(input);
+        return predEngine.Predict(actionClassificationInput);
     }
 }
