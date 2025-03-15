@@ -5,7 +5,7 @@ namespace Halliday.Application.Actions;
 
 internal class TimeAction : IAction
 {
-    public object Execute() => DateTime.UtcNow;
+    public object Execute() => DateTime.Now;
     
     public UserAnswer ParseResponse(object input)
     {
