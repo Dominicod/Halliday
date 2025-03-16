@@ -17,6 +17,9 @@ public class PromptController(ActionFactory actionFactory, IActionClassification
         if (action is null)
             throw new ArgumentNullException(nameof(request));
         
+        // TODO: Get parameters by having a model "label" each word in a prompt.
+        // Each word can be classified such as "Dominic":"Person", or "Ohio":"Place".
+        // We can then use these labels in an actions execute method.
         var result = action.Execute();
         return Results.Ok(action.ParseResponse(result));
     }
