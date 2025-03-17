@@ -1,32 +1,11 @@
+using Halliday.AI.Common;
 using Halliday.AI.Common.Interfaces;
 using Microsoft.ML;
 
 namespace Halliday.AI.Models.ActionClassificationModel;
 
-public partial class ActionClassificationModel : IModel
+public partial class ActionClassificationModel(string mlnetFileName) : Model<ActionClassificationInput, ActionClassificationOutput>(mlnetFileName)
 {
-    private readonly MLContext _mlContext = new();
-    private readonly ITransformer _model;
-    private const string MlNetModelPath = "../Halliday.AI/Models/ActionClassificationModel/ActionClassificationModel.mlnet";
-    private const string TrainingFilePath =  "../Halliday.AI//Data/time-dataset.txt";
-    private const char RetrainSeparatorChar = ':';
-    private const bool RetrainHasHeader =  false;
-    private const bool RetrainAllowQuoting =  false;
-
-    public ActionClassificationModel()
-    {
-        _model = _mlContext.Model.Load(MlNetModelPath, out _);
-    }
-    
-    /// <summary>
-    /// Creates new prediction engine for the model.
-    /// </summary>
-    /// <returns>Created prediction engine.</returns>
-    private PredictionEngine<ActionClassificationInput, ActionClassificationOutput> CreatePredictEngine()
-    {
-        return _mlContext.Model.CreatePredictionEngine<ActionClassificationInput, ActionClassificationOutput>(_model);
-    }
-
     /// <summary>
     /// Predict the output of the model given an input.
     /// </summary>
@@ -48,8 +27,8 @@ public partial class ActionClassificationModel : IModel
     {
         try
         {
-            Train(outputModelPath: MlNetModelPath,
-                inputDataFilePath: TrainingFilePath,
+            Train(outputModelPath: _mlNetModelPath,
+                inputDataFilePath: _trainingFilePath,
                 separatorChar: RetrainSeparatorChar,
                 hasHeader: RetrainHasHeader,
                 allowQuoting: RetrainAllowQuoting);
@@ -67,7 +46,7 @@ public partial class ActionClassificationModel : IModel
     {
         var trainData = LoadIDataViewFromFile(
             mlContext: _mlContext,
-            inputDataFilePath: TrainingFilePath,
+            inputDataFilePath: _trainingFilePath,
             separatorChar: RetrainSeparatorChar,
             hasHeader: RetrainHasHeader,
             allowQuoting: RetrainAllowQuoting);
