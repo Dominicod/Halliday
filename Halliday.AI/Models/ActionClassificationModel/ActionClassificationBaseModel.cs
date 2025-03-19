@@ -1,11 +1,9 @@
 using Halliday.AI.Common;
-using Halliday.AI.Common.Interfaces;
 using Halliday.AI.Common.Models;
-using Microsoft.ML;
 
 namespace Halliday.AI.Models.ActionClassificationModel;
 
-public partial class ActionClassificationModel(string modelRelativePath) : Model(modelRelativePath)
+public partial class ActionClassificationBaseModel(string modelRelativePath) : BaseModel(modelRelativePath), IModel
 {
     public List<Tuple<string, double>> Evaluate(string label)
     {
@@ -13,6 +11,6 @@ public partial class ActionClassificationModel(string modelRelativePath) : Model
         {
             RelativeTrainingFilePath = "/Data/time-dataset.txt"
         };
-        return Evaluate<ActionClassificationInput>("col0", trainingValues);
+        return Evaluate<ActionClassificationInput>(label, trainingValues);
     }
 }

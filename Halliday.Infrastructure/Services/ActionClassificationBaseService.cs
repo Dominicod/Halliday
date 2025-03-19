@@ -4,7 +4,7 @@ using Halliday.Domain.ValueObjects;
 
 namespace Halliday.Infrastructure.Services;
 
-internal class ActionClassificationService : ActionClassificationModel, IActionClassificationService
+internal class ActionClassificationBaseService : ActionClassificationBaseModel, IActionClassificationService
 {
     public ModelOutput ClassifyAction(ModelInput input)
     {

@@ -4,7 +4,7 @@ using Microsoft.ML;
 
 namespace Halliday.AI.Common;
 
-public abstract class Model(string modelRelativePath)
+public abstract class BaseModel(string modelRelativePath)
 {
     private readonly string _qualifiedModelPath = GetMlNetModelPath(modelRelativePath);
     private readonly MLContext _mlContext = new();
@@ -27,7 +27,7 @@ public abstract class Model(string modelRelativePath)
     /// <param name="trainingValues">The values to parse the training data.</param>
     /// <typeparam name="TInput">Input data for the model.</typeparam>
     /// <returns>A list of each feature and its importance.</returns>
-    public List<Tuple<string, double>> Evaluate<TInput>(string label, TrainingValues trainingValues) where TInput : IModelInput
+    protected List<Tuple<string, double>> Evaluate<TInput>(string label, TrainingValues trainingValues) where TInput : IModelInput
     {
         if (_model is null)
             LoadModel();
@@ -56,7 +56,7 @@ public abstract class Model(string modelRelativePath)
             .ToList();
     }
 
-    public void Train()
+    protected void Train()
     {
     }
 
@@ -83,7 +83,7 @@ public abstract class Model(string modelRelativePath)
 
     /// <summary>
     /// Formats the given path to point to the correct directory
-    /// inside of Halliday.AI.
+    /// inside of Halliday.AI
     /// </summary>
     /// <param name="path">Relative path of given file.</param>
     /// <returns>Fully qualified path formatted.</returns>

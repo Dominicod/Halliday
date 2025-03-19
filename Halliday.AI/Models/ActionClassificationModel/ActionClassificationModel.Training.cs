@@ -4,7 +4,7 @@ using Microsoft.ML.Trainers.FastTree;
 
 namespace Halliday.AI.Models.ActionClassificationModel;
 
-public partial class ActionClassificationModel
+public partial class ActionClassificationBaseModel
 {
     /// <summary>
     /// Train a new model with the provided dataset.

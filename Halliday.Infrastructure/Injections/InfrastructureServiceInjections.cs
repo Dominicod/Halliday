@@ -8,6 +8,6 @@ public static class InfrastructureServiceInjections
 {
     public static void AddInfrastructureServices(this IServiceCollection services)
     {
-        services.AddSingleton<IActionClassificationService, ActionClassificationService>();
+        services.AddSingleton<IActionClassificationService, ActionClassificationBaseService>();
     }
 }
