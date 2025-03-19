@@ -4,11 +4,11 @@ public record TrainingValues
 {
     private readonly string _relativeTrainingFilePath = string.Empty;
 
-    public bool? HasHeader { get; init; } = false;
+    public bool HasHeader { get; init; } = false;
     
-    public bool? AllowQuoting { get; init; } = false;
+    public bool AllowQuoting { get; init; } = false;
     
-    public char? Separator { get; init; } = ':';
+    public char Separator { get; init; } = ':';
     
     public required string RelativeTrainingFilePath
     {
