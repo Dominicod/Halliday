@@ -2,25 +2,44 @@ using Microsoft.ML;
 
 namespace Halliday.AI.Common;
 
-public abstract class Model<TInput, TOutput> where TInput : class, new() where TOutput : class, new()
+public abstract class Model
 {
-    private char _retrainSeparatorChar = ':';
-    private bool _retrainHasHeader = false;
-    private bool _retrainAllowQuoting = false;
-    private string _modelPath = string.Empty;
-    private string _trainingPath = string.Empty;
+    private string _modelPath;
     private readonly MLContext _mlContext = new();
-    protected PredictionEngine<TInput, TOutput>? PredictionEngine;
 
-    protected Model(string mlnetFileName)
+    protected Model(string modelRelativePath)
     {
-        _modelPath = GetMlNetModelPath(mlnetFileName);
-        var transformer = _mlContext.Model.Load(_modelPath, out _);
-        // PredictionEngine = _mlContext.Model.CreatePredictionEngine<TInput, TOutput>(transformer);
+        _modelPath = GetMlNetModelPath(modelRelativePath);
+        // var transformer = _mlContext.Model.Load(_modelPath, out _);
     }
 
-    private static string GetMlNetModelPath(string mlnetFileName)
+    private static string GetMlNetModelPath(string relativePath)
     {
-        return string.Empty;
+        if (!relativePath.EndsWith(".mlnet"))
+            throw new ArgumentException("File must end with '.mlnet'");
+
+        return FormatPath(relativePath);
+    }
+
+    private static string GetTrainModelPath(string relativePath)
+    {
+        if (!relativePath.EndsWith(".txt"))
+            throw new ArgumentException("File must end with '.txt'");
+
+        return FormatPath(relativePath);
+    }
+
+    private static string FormatPath(string path)
+    {
+        // Pulls Path out of bin directory
+        var modifiedPath = $"../../../{path}";
+        var fullPath = Path.GetFullPath(modifiedPath);
+        
+        // When running Web project the full path uses Web due to it being
+        // the applications current entry point
+        if (fullPath.Contains("Halliday.Web"))
+            fullPath = fullPath.Replace("Halliday.Web", "Halliday.AI");
+
+        return fullPath;
     }
 }
